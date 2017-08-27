@@ -30,3 +30,13 @@ that php file looked interesting, let's open it : http://tasks.ctf.com.ua:13372/
 got this : PD9waHAKCiRmbGFnPSJoNGNrMXR7JFFMJkxGST1GUjEzTkQkfSI7Cgo/Pgo= <br>
 base64 decode it and find some php code with flag<code>"$flag=h4ck1t{$QL&LFI=FR13ND$};"</code>
 that's our flag
+
+<h3>Web (150): </h3><br>
+Hard task, was looking in all js files, then I found js/jquery.js which handles what the client types in main page<br>
+After analyzing it we find an interesting function with this variable inside : <br>
+<code>$m=[70,70,71,79,86,74,71,83,80,74,77,86,81,95];//times alt is pressed for Access Granted</code>
+<br>Tried to decode ascii code random word <br> but there is an interesting condition if(key==$m[$c]-$c)<br>
+tried to loop over the array and substract the index from each value to get <br>
+$x=[70, 69, 69, 76, 82, 69, 65, 76, 72, 65, 67, 75, 69, 82]<br>
+decoding the ascii : we get "FEELREALHACKER" <br>
+put that in lower case and wrap it in flag format, and that's the flag <code>h4ck1t{feelrealhacker}</code>
